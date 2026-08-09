@@ -1,19 +1,54 @@
-An autonomous maze-solving robot built as our final year B.Tech project at MIT ADT University. It uses an Arduino UNO and three ultrasonic sensors to navigate a 4x4 grid maze, map it, and find the shortest path.
+# Autonomous Maze-Solving Micromouse Robot 🤖🧩
 
-## How it works:
-1. **First Run (Exploration):** The robot uses a Left/Right Wall-Following rule to explore the unknown maze layout. While driving, it tracks the walls using the sensors and saves the layout cell-by-cell into its memory.
-2. **Second Run (Shortest Path):** It processes the stored map data using the Flood-Fill algorithm to calculate the absolute shortest path to the center, completely skipping dead ends.
+An autonomous maze-solving micromouse robot built using Arduino UNO and ultrasonic sensors. The robot navigates a $4 \times 4$ grid maze, maps its layout, and computes the shortest path to the goal using the **Flood-Fill algorithm**.
 
-## Hardware Setup:
-- **Microcontroller:** Arduino UNO (ATmega328P)
-- **Motor Driver:** L298 Dual H-Bridge
-- **Sensors:** 3x HC-SR04 Ultrasonic Sensors (Left, Center, Right)
-- **Power:** 4x AA batteries for the motors + 9V battery for the Arduino logic
+---
 
-## Project Group (ECO2425UGP-03):
-- Abhijeet Patil (MITU21BTEC0001)
-- Mahesh Khune (MITU21BTEC0024)
-- Mihir Manere (MITU21BTEC0026)
-- Atharva Jagtap (MITU21BTEC0011)
-- **Guided by:** Prof. Rupali Ithape
-- **Published in:** International Journal of Creative Research Thoughts (IJCRT), December 2024
+## 🌟 Highlights & Features
+
+* **Exploration Phase:** Utilizes a Wall-Following algorithm (Left/Right wall hugging) to explore unknown maze layouts cell-by-cell.
+* **Shortest Path Optimization:** Implements the **Flood-Fill algorithm** to analyze stored grid data, eliminate dead ends, and compute the optimal trajectory to the center.
+* **Multi-Sensor Array:** Uses three HC-SR04 ultrasonic sensors (Left, Center, Right) for obstacle detection and distance mapping.
+* **Academic Publication:** Research published in the *International Journal of Creative Research Thoughts (IJCRT)*, December 2024.
+
+---
+
+## ⚙️ How It Works
+
+1. **First Run (Exploration & Mapping):**
+   * The robot navigates through the unexplored maze using real-time ultrasonic sensor feedback.
+   * As it moves through the grid, it tracks wall boundaries and logs cell coordinates in system memory.
+
+2. **Second Run (Shortest Path Execution):**
+   * The control code processes the generated maze matrix using the **Flood-Fill algorithm**.
+   * It calculates the shortest path from the start cell to the goal, bypassing all dead ends and unnecessary loops explored during the first pass.
+
+---
+
+## 🛠️ Hardware Specifications
+
+| Component | Description / Specification |
+| :--- | :--- |
+| **Microcontroller** | Arduino UNO (ATmega328P) |
+| **Motor Driver** | L298N Dual H-Bridge Motor Driver |
+| **Sensors** | 3x HC-SR04 Ultrasonic Distance Sensors (Left, Center, Right) |
+| **Motors** | Dual DC Geared Motors with wheels |
+| **Power Supply (Logic)** | 9V DC Battery |
+| **Power Supply (Motors)** | 4x AA Batteries (6V DC) |
+
+---
+
+## 📂 Repository Structure
+
+Autonomous-maze-solver/
+│
+├── maze_solver.c    # Main C/C++ control code (sensor readings, maze matrix, Flood-Fill)
+└── README.md        # Comprehensive project documentation
+
+---
+
+## 📄 Publication & Citation
+
+* **Project Group ID:** `ECO2425UGP-03`
+* **Institution:** MIT School of Engineering, MIT ADT University
+* **Publication:** *International Journal of Creative Research Thoughts (IJCRT)*, December 2024
